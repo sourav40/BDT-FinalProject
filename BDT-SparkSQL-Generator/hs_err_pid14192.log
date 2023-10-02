@@ -1,0 +1,781 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f37f28971d0, pid=14192, tid=0x00007f37f1e5b700
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_181-b13) (build 1.8.0_181-b13)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.181-b13 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# V  [libjvm.so+0xa3b1d0]  StringTable::intern(Handle, unsigned short*, int, Thread*)+0x50
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f37ec012000):  JavaThread "main" [_thread_in_vm, id=14198, stack(0x00007f37f1d5b000,0x00007f37f1e5c000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 2 (SEGV_ACCERR), si_addr: 0x00007f37ee977000
+
+Registers:
+RAX=0x000000009f0c2478, RBX=0x00007f37ec012500, RCX=0x00007f37ee977000, RDX=0x0000000000000000
+RSP=0x00007f37f1e59b10, RBP=0x00007f37f1e59b70, RSI=0x0000000200000070, RDI=0x0000000000000000
+R8 =0x00007f37f2e20f79, R9 =0x0000000000000fe4, R10=0x00007f37dd2d4ff8, R11=0x00000000d7c89c20
+R12=0x00007f37ec010bb0, R13=0x000000009f0c2478, R14=0x00007f37ec012000, R15=0x0000000000000025
+RIP=0x00007f37f28971d0, EFLAGS=0x0000000000010206, CSGSFS=0x0000000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f37f1e59b10)
+0x00007f37f1e59b10:   00000fa0d93d4ed0 00000000d7caee68
+0x00007f37f1e59b20:   00007f37f1e59bac 00007f37ec012000
+0x00007f37f1e59b30:   00007f37ec010670 00007f37ec012500
+0x00007f37f1e59b40:   00007f37f1e59bc0 00007f37ec012500
+0x00007f37f1e59b50:   00007f37ec010bb0 00000000d7caee50
+0x00007f37f1e59b60:   00007f37ec012000 00007f37ec010660
+0x00007f37f1e59b70:   00007f37f1e59be0 00007f37f2897571
+0x00007f37f1e59b80:   00007f37f1e59b80 00007f37ec010670
+0x00007f37f1e59b90:   00007f37ec010a48 00000000000003d8
+0x00007f37f1e59ba0:   00000000d7c89710 00000025d7c89988
+0x00007f37f1e59bb0:   00000000d7c89860 00007f37ec012000
+0x00007f37f1e59bc0:   00007f37f1e59bf0 00007f37f1e59c60
+0x00007f37f1e59bd0:   00007f37ec0121f8 00007f37f2e30e00
+0x00007f37f1e59be0:   00007f37f1e59c50 00007f37f257f8c4
+0x00007f37f1e59bf0:   00007f37f2dcc9b0 00007f37ca074a52
+0x00007f37f1e59c00:   0000000000000000 00007f37dd3e6600
+0x00007f37f1e59c10:   00007f37ec012000 00007f37dd3eb924
+0x00007f37f1e59c20:   00000000d93d4ad8 0000000000001a3e
+0x00007f37f1e59c30:   0000000000000000 00000000d7caee78
+0x00007f37f1e59c40:   00000000d9566860 00007f37ec012000
+0x00007f37f1e59c50:   00007f37f1e59ca0 00007f37dd2d5066
+0x00007f37f1e59c60:   00000000d7caee50 00007f37dd1d373d
+0x00007f37f1e59c70:   00000000d7caee50 00000000d7c89808
+0x00007f37f1e59c80:   00000646d9566860 0000000000000000
+0x00007f37f1e59c90:   0000000000000001 00007f370000000b
+0x00007f37f1e59ca0:   00000000d7c89710 00007f37dd3e3b24
+0x00007f37f1e59cb0:   00007f37ca0c6b28 00007f37ca66b2d8
+0x00007f37f1e59cc0:   0000000000000000 00007f37f1e59cf0
+0x00007f37f1e59cd0:   0000000000000000 00007f37dd440aa4
+0x00007f37f1e59ce0:   0000003e00000000 0000000000000000
+0x00007f37f1e59cf0:   0000000000000002 00000000d7c89710
+0x00007f37f1e59d00:   00000000d7c89710 00007f37ca66b020 
+
+Instructions: (pc=0x00007f37f28971d0)
+0x00007f37f28971b0:   00 45 31 ed 85 d2 48 89 f1 7e 2e 48 8b 55 c0 41
+0x00007f37f28971c0:   8d 47 ff 48 8d 74 42 02 0f 1f 84 00 00 00 00 00
+0x00007f37f28971d0:   0f b7 11 44 89 e8 48 83 c1 02 c1 e0 05 44 29 e8
+0x00007f37f28971e0:   48 39 f1 44 8d 2c 10 75 e7 4c 8b 35 e0 a4 59 00 
+
+Register to memory mapping:
+
+RAX=0x000000009f0c2478 is an unallocated location in the heap
+RBX=0x00007f37ec012500 is an unknown value
+RCX=0x00007f37ee977000 is an unknown value
+RDX=0x0000000000000000 is an unknown value
+RSP=0x00007f37f1e59b10 is pointing into the stack for thread: 0x00007f37ec012000
+RBP=0x00007f37f1e59b70 is pointing into the stack for thread: 0x00007f37ec012000
+RSI=0x0000000200000070 is an unknown value
+RDI=0x0000000000000000 is an unknown value
+R8 =0x00007f37f2e20f79: <offset 0xfc4f79> in /usr/java/jdk1.8.0_181/jre/lib/amd64/server/libjvm.so at 0x00007f37f1e5c000
+R9 =0x0000000000000fe4 is an unknown value
+R10=0x00007f37dd2d4ff8 is at entry_point+56 in (nmethod*)0x00007f37dd2d4e50
+R11=0x00000000d7c89c20 is an oop
+org.apache.hadoop.shaded.com.ctc.wstx.sr.Element 
+ - klass: 'org/apache/hadoop/shaded/com/ctc/wstx/sr/Element'
+R12=0x00007f37ec010bb0 is an unknown value
+R13=0x000000009f0c2478 is an unallocated location in the heap
+R14=0x00007f37ec012000 is a thread
+R15=0x0000000000000025 is an unknown value
+
+
+Stack: [0x00007f37f1d5b000,0x00007f37f1e5c000],  sp=0x00007f37f1e59b10,  free space=1018k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa3b1d0]  StringTable::intern(Handle, unsigned short*, int, Thread*)+0x50
+V  [libjvm.so+0xa3b571]  StringTable::intern(oopDesc*, Thread*)+0x131
+V  [libjvm.so+0x7238c4]  JVM_InternString+0x1f4
+J 723  java.lang.String.intern()Ljava/lang/String; (0 bytes) @ 0x00007f37dd2d5066 [0x00007f37dd2d4fc0+0xa6]
+J 1075 C1 org.apache.hadoop.conf.Configuration$Parser.handleEndElement()V (413 bytes) @ 0x00007f37dd3e3b24 [0x00007f37dd3e27a0+0x1384]
+J 1153 C2 org.apache.hadoop.conf.Configuration$Parser.parseNext()V (114 bytes) @ 0x00007f37dd426384 [0x00007f37dd425680+0xd04]
+J 1372% C1 org.apache.hadoop.conf.Configuration$Parser.parse()Ljava/util/List; (24 bytes) @ 0x00007f37dd4a12c4 [0x00007f37dd4a1060+0x264]
+j  org.apache.hadoop.conf.Configuration.loadResource(Ljava/util/Properties;Lorg/apache/hadoop/conf/Configuration$Resource;Z)Lorg/apache/hadoop/conf/Configuration$Resource;+128
+j  org.apache.hadoop.conf.Configuration.loadResources(Ljava/util/Properties;Ljava/util/ArrayList;IZZ)V+56
+j  org.apache.hadoop.conf.Configuration.loadProps(Ljava/util/Properties;IZ)V+40
+j  org.apache.hadoop.conf.Configuration.getProps()Ljava/util/Properties;+25
+j  org.apache.hadoop.conf.Configuration.set(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V+76
+j  org.apache.hadoop.conf.Configuration.set(Ljava/lang/String;Ljava/lang/String;)V+4
+j  org.apache.spark.deploy.SparkHadoopUtil$.org$apache$spark$deploy$SparkHadoopUtil$$appendSparkHadoopConfigs(Lorg/apache/spark/SparkConf;Lorg/apache/hadoop/conf/Configuration;)V+69
+j  org.apache.spark.deploy.SparkHadoopUtil$.org$apache$spark$deploy$SparkHadoopUtil$$appendS3AndSparkHadoopHiveConfigurations(Lorg/apache/spark/SparkConf;Lorg/apache/hadoop/conf/Configuration;)V+105
+j  org.apache.spark.deploy.SparkHadoopUtil$.newConfiguration(Lorg/apache/spark/SparkConf;)Lorg/apache/hadoop/conf/Configuration;+11
+j  org.apache.spark.deploy.SparkHadoopUtil.newConfiguration(Lorg/apache/spark/SparkConf;)Lorg/apache/hadoop/conf/Configuration;+4
+j  org.apache.spark.SecurityManager.<init>(Lorg/apache/spark/SparkConf;Lscala/Option;Lorg/apache/spark/internal/config/ConfigEntry;)V+252
+j  org.apache.spark.SparkEnv$.create(Lorg/apache/spark/SparkConf;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lscala/Option;ZILscala/Option;Lorg/apache/spark/scheduler/LiveListenerBus;Lscala/Option;)Lorg/apache/spark/SparkEnv;+97
+j  org.apache.spark.SparkEnv$.createDriverEnv(Lorg/apache/spark/SparkConf;ZLorg/apache/spark/scheduler/LiveListenerBus;ILscala/Option;)Lorg/apache/spark/SparkEnv;+156
+j  org.apache.spark.SparkContext.createSparkEnv(Lorg/apache/spark/SparkConf;ZLorg/apache/spark/scheduler/LiveListenerBus;)Lorg/apache/spark/SparkEnv;+23
+j  org.apache.spark.SparkContext.<init>(Lorg/apache/spark/SparkConf;)V+1013
+j  org.apache.spark.api.java.JavaSparkContext.<init>(Lorg/apache/spark/SparkConf;)V+6
+j  SparkSQL.TestSQL.main([Ljava/lang/String;)V+23
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x697a76]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x1056
+V  [libjvm.so+0x6d91c2]  jni_invoke_static(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*)+0x362
+V  [libjvm.so+0x6f5a2a]  jni_CallStaticVoidMethod+0x17a
+C  [libjli.so+0x80ff]  JavaMain+0x81f
+C  [libpthread.so.0+0x7a51]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 723  java.lang.String.intern()Ljava/lang/String; (0 bytes) @ 0x00007f37dd2d4ff8 [0x00007f37dd2d4fc0+0x38]
+J 1075 C1 org.apache.hadoop.conf.Configuration$Parser.handleEndElement()V (413 bytes) @ 0x00007f37dd3e3b24 [0x00007f37dd3e27a0+0x1384]
+J 1153 C2 org.apache.hadoop.conf.Configuration$Parser.parseNext()V (114 bytes) @ 0x00007f37dd426384 [0x00007f37dd425680+0xd04]
+J 1372% C1 org.apache.hadoop.conf.Configuration$Parser.parse()Ljava/util/List; (24 bytes) @ 0x00007f37dd4a12c4 [0x00007f37dd4a1060+0x264]
+j  org.apache.hadoop.conf.Configuration.loadResource(Ljava/util/Properties;Lorg/apache/hadoop/conf/Configuration$Resource;Z)Lorg/apache/hadoop/conf/Configuration$Resource;+128
+j  org.apache.hadoop.conf.Configuration.loadResources(Ljava/util/Properties;Ljava/util/ArrayList;IZZ)V+56
+j  org.apache.hadoop.conf.Configuration.loadProps(Ljava/util/Properties;IZ)V+40
+j  org.apache.hadoop.conf.Configuration.getProps()Ljava/util/Properties;+25
+j  org.apache.hadoop.conf.Configuration.set(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V+76
+j  org.apache.hadoop.conf.Configuration.set(Ljava/lang/String;Ljava/lang/String;)V+4
+j  org.apache.spark.deploy.SparkHadoopUtil$.org$apache$spark$deploy$SparkHadoopUtil$$appendSparkHadoopConfigs(Lorg/apache/spark/SparkConf;Lorg/apache/hadoop/conf/Configuration;)V+69
+j  org.apache.spark.deploy.SparkHadoopUtil$.org$apache$spark$deploy$SparkHadoopUtil$$appendS3AndSparkHadoopHiveConfigurations(Lorg/apache/spark/SparkConf;Lorg/apache/hadoop/conf/Configuration;)V+105
+j  org.apache.spark.deploy.SparkHadoopUtil$.newConfiguration(Lorg/apache/spark/SparkConf;)Lorg/apache/hadoop/conf/Configuration;+11
+j  org.apache.spark.deploy.SparkHadoopUtil.newConfiguration(Lorg/apache/spark/SparkConf;)Lorg/apache/hadoop/conf/Configuration;+4
+j  org.apache.spark.SecurityManager.<init>(Lorg/apache/spark/SparkConf;Lscala/Option;Lorg/apache/spark/internal/config/ConfigEntry;)V+252
+j  org.apache.spark.SparkEnv$.create(Lorg/apache/spark/SparkConf;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lscala/Option;ZILscala/Option;Lorg/apache/spark/scheduler/LiveListenerBus;Lscala/Option;)Lorg/apache/spark/SparkEnv;+97
+j  org.apache.spark.SparkEnv$.createDriverEnv(Lorg/apache/spark/SparkConf;ZLorg/apache/spark/scheduler/LiveListenerBus;ILscala/Option;)Lorg/apache/spark/SparkEnv;+156
+j  org.apache.spark.SparkContext.createSparkEnv(Lorg/apache/spark/SparkConf;ZLorg/apache/spark/scheduler/LiveListenerBus;)Lorg/apache/spark/SparkEnv;+23
+j  org.apache.spark.SparkContext.<init>(Lorg/apache/spark/SparkConf;)V+1013
+j  org.apache.spark.api.java.JavaSparkContext.<init>(Lorg/apache/spark/SparkConf;)V+6
+j  SparkSQL.TestSQL.main([Ljava/lang/String;)V+23
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f37ee88a000 JavaThread "process reaper" daemon [_thread_blocked, id=14213, stack(0x00007f37ca034000,0x00007f37ca06d000)]
+  0x00007f37ec0c2800 JavaThread "Service Thread" daemon [_thread_blocked, id=14207, stack(0x00007f37cbafb000,0x00007f37cbbfc000)]
+  0x00007f37ec0bf800 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=14206, stack(0x00007f37cbbfc000,0x00007f37cbcfd000)]
+  0x00007f37ec0bd000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=14205, stack(0x00007f37cbcfd000,0x00007f37cbdfe000)]
+  0x00007f37ec0bb000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=14204, stack(0x00007f37cbdfe000,0x00007f37cbeff000)]
+  0x00007f37ec088000 JavaThread "Finalizer" daemon [_thread_blocked, id=14203, stack(0x00007f37cbeff000,0x00007f37cc000000)]
+  0x00007f37ec085800 JavaThread "Reference Handler" daemon [_thread_blocked, id=14202, stack(0x00007f37d8003000,0x00007f37d8104000)]
+=>0x00007f37ec012000 JavaThread "main" [_thread_in_vm, id=14198, stack(0x00007f37f1d5b000,0x00007f37f1e5c000)]
+
+Other Threads:
+  0x00007f37ec07b800 VMThread [stack: 0x00007f37d8104000,0x00007f37d8205000] [id=14201]
+  0x00007f37ec0c7800 WatcherThread [stack: 0x00007f37cb9fa000,0x00007f37cbafb000] [id=14208]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 36864K, used 18646K [0x00000000d6f80000, 0x00000000db780000, 0x0000000100000000)
+  eden space 31744K, 42% used [0x00000000d6f80000,0x00000000d7cb80c8,0x00000000d8e80000)
+  from space 5120K, 99% used [0x00000000d9380000,0x00000000d987d8d0,0x00000000d9880000)
+  to   space 5120K, 0% used [0x00000000d8e80000,0x00000000d8e80000,0x00000000d9380000)
+ ParOldGen       total 84992K, used 3577K [0x0000000084e00000, 0x000000008a100000, 0x00000000d6f80000)
+  object space 84992K, 4% used [0x0000000084e00000,0x000000008517e568,0x000000008a100000)
+ Metaspace       used 19688K, capacity 20754K, committed 20864K, reserved 1067008K
+  class space    used 2732K, capacity 2895K, committed 2944K, reserved 1048576K
+
+Card table byte_map: [0x00007f37f0d4e000,0x00007f37f1128000] byte_map_base: 0x00007f37f0927000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f37f2e300a0
+ Begin Bits: [0x00007f37d9270000, 0x00007f37db138000)
+ End Bits:   [0x00007f37db138000, 0x00007f37dd000000)
+
+Polling page: 0x00007f37f3084000
+
+CodeCache: size=245760Kb used=4788Kb max_used=4788Kb free=240971Kb
+ bounds [0x00007f37dd000000, 0x00007f37dd4b0000, 0x00007f37ec000000]
+ total_blobs=1775 nmethods=1369 adapters=319
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 1.257 Thread 0x00007f37ec0bf800 1370       3       org.apache.hadoop.shaded.com.ctc.wstx.sr.BasicStreamReader::skipToken (565 bytes)
+Event: 1.257 Thread 0x00007f37ec0bf800 nmethod 1370 0x00007f37dd4a97d0 code [0x00007f37dd4a9be0, 0x00007f37dd4ac0b8]
+Event: 1.258 Thread 0x00007f37ec0bf800 1371       3       java.util.ArrayList::grow (45 bytes)
+Event: 1.259 Thread 0x00007f37ec0bf800 nmethod 1371 0x00007f37dd4a1610 code [0x00007f37dd4a17c0, 0x00007f37dd4a1c98]
+Event: 1.260 Thread 0x00007f37ec0bf800 1372 %     3       org.apache.hadoop.conf.Configuration$Parser::parse @ 0 (24 bytes)
+Event: 1.260 Thread 0x00007f37ec0bf800 nmethod 1372% 0x00007f37dd4a0ed0 code [0x00007f37dd4a1060, 0x00007f37dd4a1488]
+Event: 1.260 Thread 0x00007f37ec0bf800 1373       3       org.apache.hadoop.conf.Configuration$Parser::parse (24 bytes)
+Event: 1.260 Thread 0x00007f37ec0bf800 nmethod 1373 0x00007f37dd4acd90 code [0x00007f37dd4acf20, 0x00007f37dd4ad328]
+Event: 1.260 Thread 0x00007f37ec0bf800 1374       3       org.apache.hadoop.shaded.com.ctc.wstx.sr.BasicStreamReader::nextFromTreeCommentOrCData (99 bytes)
+Event: 1.260 Thread 0x00007f37ec0bf800 nmethod 1374 0x00007f37dd4ad490 code [0x00007f37dd4ad6e0, 0x00007f37dd4ae7a8]
+
+GC Heap History (4 events):
+Event: 0.583 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 36864K, used 31744K [0x00000000d6f80000, 0x00000000d9880000, 0x0000000100000000)
+  eden space 31744K, 100% used [0x00000000d6f80000,0x00000000d8e80000,0x00000000d8e80000)
+  from space 5120K, 0% used [0x00000000d9380000,0x00000000d9380000,0x00000000d9880000)
+  to   space 5120K, 0% used [0x00000000d8e80000,0x00000000d8e80000,0x00000000d9380000)
+ ParOldGen       total 84992K, used 0K [0x0000000084e00000, 0x000000008a100000, 0x00000000d6f80000)
+  object space 84992K, 0% used [0x0000000084e00000,0x0000000084e00000,0x000000008a100000)
+ Metaspace       used 10408K, capacity 10616K, committed 10880K, reserved 1058816K
+  class space    used 1457K, capacity 1542K, committed 1664K, reserved 1048576K
+Event: 0.589 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 36864K, used 5091K [0x00000000d6f80000, 0x00000000d9880000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000d6f80000,0x00000000d6f80000,0x00000000d8e80000)
+  from space 5120K, 99% used [0x00000000d8e80000,0x00000000d9378e18,0x00000000d9380000)
+  to   space 5120K, 0% used [0x00000000d9380000,0x00000000d9380000,0x00000000d9880000)
+ ParOldGen       total 84992K, used 1426K [0x0000000084e00000, 0x000000008a100000, 0x00000000d6f80000)
+  object space 84992K, 1% used [0x0000000084e00000,0x0000000084f64808,0x000000008a100000)
+ Metaspace       used 10408K, capacity 10616K, committed 10880K, reserved 1058816K
+  class space    used 1457K, capacity 1542K, committed 1664K, reserved 1048576K
+}
+Event: 1.075 GC heap before
+{Heap before GC invocations=2 (full 0):
+ PSYoungGen      total 36864K, used 36835K [0x00000000d6f80000, 0x00000000d9880000, 0x0000000100000000)
+  eden space 31744K, 100% used [0x00000000d6f80000,0x00000000d8e80000,0x00000000d8e80000)
+  from space 5120K, 99% used [0x00000000d8e80000,0x00000000d9378e18,0x00000000d9380000)
+  to   space 5120K, 0% used [0x00000000d9380000,0x00000000d9380000,0x00000000d9880000)
+ ParOldGen       total 84992K, used 1426K [0x0000000084e00000, 0x000000008a100000, 0x00000000d6f80000)
+  object space 84992K, 1% used [0x0000000084e00000,0x0000000084f64808,0x000000008a100000)
+ Metaspace       used 17288K, capacity 17966K, committed 18176K, reserved 1064960K
+  class space    used 2403K, capacity 2545K, committed 2560K, reserved 1048576K
+Event: 1.084 GC heap after
+Heap after GC invocations=2 (full 0):
+ PSYoungGen      total 36864K, used 5110K [0x00000000d6f80000, 0x00000000db780000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000d6f80000,0x00000000d6f80000,0x00000000d8e80000)
+  from space 5120K, 99% used [0x00000000d9380000,0x00000000d987d8d0,0x00000000d9880000)
+  to   space 5120K, 0% used [0x00000000d8e80000,0x00000000d8e80000,0x00000000d9380000)
+ ParOldGen       total 84992K, used 3577K [0x0000000084e00000, 0x000000008a100000, 0x00000000d6f80000)
+  object space 84992K, 4% used [0x0000000084e00000,0x000000008517e568,0x000000008a100000)
+ Metaspace       used 17288K, capacity 17966K, committed 18176K, reserved 1064960K
+  class space    used 2403K, capacity 2545K, committed 2560K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 0.613 Thread 0x00007f37ec012000 Uncommon trap: reason=predicate action=maybe_recompile pc=0x00007f37dd2671d0 method=sun.net.www.ParseUtil.encodePath(Ljava/lang/String;Z)Ljava/lang/String; @ 36
+Event: 0.622 Thread 0x00007f37ec012000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f37dd1b858c method=sun.misc.MetaIndex.mayContain(Ljava/lang/String;)Z @ 13
+Event: 0.623 Thread 0x00007f37ec012000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f37dd1f682c method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+Event: 0.908 Thread 0x00007f37ec012000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f37dd2818f8 method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 62
+Event: 0.908 Thread 0x00007f37ec012000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f37dd2407c4 method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 62
+Event: 0.921 Thread 0x00007f37ec012000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f37dd3ba1a8 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 203
+Event: 1.018 Thread 0x00007f37ec012000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f37dd3e8544 method=org.apache.hadoop.shaded.com.ctc.wstx.io.WstxInputData.isNameChar(C)Z @ 49
+Event: 1.018 Thread 0x00007f37ec012000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f37dd4047e8 method=org.apache.hadoop.conf.Configuration$Parser.parseNext()V @ 63
+Event: 1.063 Thread 0x00007f37ec012000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f37dd41ba30 method=org.apache.hadoop.shaded.com.ctc.wstx.io.UTF8Reader.read([CII)I @ 269
+Event: 1.100 Thread 0x00007f37ec012000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f37dd350418 method=jdk.internal.org.objectweb.asm.Type.getArgumentsAndReturnSizes(Ljava/lang/String;)I @ 41
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.770 Thread 0x00007f37ec012000 Exception <a 'java/net/UnknownHostException'> (0x00000000d78e6880) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u181/11358/hotspot/src/share/vm/prims/jni.cpp, line 735]
+Event: 0.814 Thread 0x00007f37ec012000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$flatMap$1(Lscala/collection/mutable/Builder;Lscala/Function1;Ljava/lang/Object;)Lscala/collection/mutable/Builder;> (0x00000000d7aa0010) thrown at [/HUDSON/workspace/8-2-build-linux-amd
+Event: 0.851 Thread 0x00007f37ec012000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$flatten$1(Lscala/collection/mutable/Builder;Lscala/Function1;Ljava/lang/Object;)Lscala/collection/mutable/Builder;> (0x00000000d7dffcb8) thrown at [/HUDSON/workspace/8-2-build-linux-amd
+Event: 0.867 Thread 0x00007f37ec012000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$mapAsScalaConcurrentMapConverter$1(Lscala/collection/convert/DecorateAsScala;Ljava/util/concurrent/ConcurrentMap;)Lscala/collection/concurrent/Map;> (0x00000000d7eda908) thrown at [/HUD
+Event: 1.130 Thread 0x00007f37ec012000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$occCounts$1$adapted(Lscala/collection/mutable/HashMap;Ljava/lang/Object;)Ljava/lang/Object;> (0x00000000d7216dc8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u181/11358/hotsp
+Event: 1.130 Thread 0x00007f37ec012000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$diff$1(Lscala/collection/mutable/Map;Lscala/collection/mutable/Builder;Ljava/lang/Object;)Ljava/lang/Object;> (0x00000000d721b468) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk
+Event: 1.152 Thread 0x00007f37ec012000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$addString$1(Lscala/Tuple2;)Ljava/lang/String;> (0x00000000d741c400) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u181/11358/hotspot/src/share/vm/interpreter/linkResolver.cpp, 
+Event: 1.160 Thread 0x00007f37ec012000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$contains$1$adapted(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;> (0x00000000d7484c50) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u181/11358/hotspot/src/share/vm/i
+Event: 1.189 Thread 0x00007f37ec012000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$asScalaBufferConverter$1(Lscala/collection/convert/DecorateAsScala;Ljava/util/List;)Lscala/collection/mutable/Buffer;> (0x00000000d7721dd0) thrown at [/HUDSON/workspace/8-2-build-linux-
+Event: 1.230 Thread 0x00007f37ec012000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$$plus$plus$4(Lscala/collection/Set;Ljava/lang/Object;)Lscala/collection/Set;> (0x00000000d797a7e0) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u181/11358/hotspot/src/share/vm
+
+Events (10 events):
+Event: 1.252 loading class scala/Tuple2
+Event: 1.252 loading class scala/Tuple2 done
+Event: 1.252 loading class scala/Function1
+Event: 1.252 loading class scala/Function1 done
+Event: 1.252 loading class org/apache/hadoop/conf/Configuration
+Event: 1.252 loading class org/apache/hadoop/conf/Configuration done
+Event: 1.253 loading class org/apache/hadoop/conf/Configuration
+Event: 1.253 loading class org/apache/hadoop/conf/Configuration done
+Event: 1.255 loading class scala/util/matching/Regex$$anon$2
+Event: 1.255 loading class scala/util/matching/Regex$$anon$2 done
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 fd:00 3543737                            /usr/java/jdk1.8.0_181/bin/java
+00600000-00601000 rw-p 00000000 fd:00 3543737                            /usr/java/jdk1.8.0_181/bin/java
+01acd000-01aee000 rw-p 00000000 00:00 0                                  [heap]
+84e00000-8a100000 rw-p 00000000 00:00 0 
+8a100000-d6f80000 ---p 00000000 00:00 0 
+d6f80000-db780000 rw-p 00000000 00:00 0 
+db780000-100000000 ---p 00000000 00:00 0 
+100000000-1002e0000 rw-p 00000000 00:00 0 
+1002e0000-140000000 ---p 00000000 00:00 0 
+36dc800000-36dc820000 r-xp 00000000 fd:00 2616730                        /lib64/ld-2.12.so
+36dca1f000-36dca20000 r--p 0001f000 fd:00 2616730                        /lib64/ld-2.12.so
+36dca20000-36dca21000 rw-p 00020000 fd:00 2616730                        /lib64/ld-2.12.so
+36dca21000-36dca22000 rw-p 00000000 00:00 0 
+36dcc00000-36dcc02000 r-xp 00000000 fd:00 2616738                        /lib64/libdl-2.12.so
+36dcc02000-36dce02000 ---p 00002000 fd:00 2616738                        /lib64/libdl-2.12.so
+36dce02000-36dce03000 r--p 00002000 fd:00 2616738                        /lib64/libdl-2.12.so
+36dce03000-36dce04000 rw-p 00003000 fd:00 2616738                        /lib64/libdl-2.12.so
+36dd000000-36dd18a000 r-xp 00000000 fd:00 2616731                        /lib64/libc-2.12.so
+36dd18a000-36dd38a000 ---p 0018a000 fd:00 2616731                        /lib64/libc-2.12.so
+36dd38a000-36dd38e000 r--p 0018a000 fd:00 2616731                        /lib64/libc-2.12.so
+36dd38e000-36dd38f000 rw-p 0018e000 fd:00 2616731                        /lib64/libc-2.12.so
+36dd38f000-36dd394000 rw-p 00000000 00:00 0 
+36dd400000-36dd417000 r-xp 00000000 fd:00 2616734                        /lib64/libpthread-2.12.so
+36dd417000-36dd617000 ---p 00017000 fd:00 2616734                        /lib64/libpthread-2.12.so
+36dd617000-36dd618000 r--p 00017000 fd:00 2616734                        /lib64/libpthread-2.12.so
+36dd618000-36dd619000 rw-p 00018000 fd:00 2616734                        /lib64/libpthread-2.12.so
+36dd619000-36dd61d000 rw-p 00000000 00:00 0 
+36dd800000-36dd807000 r-xp 00000000 fd:00 2616735                        /lib64/librt-2.12.so
+36dd807000-36dda06000 ---p 00007000 fd:00 2616735                        /lib64/librt-2.12.so
+36dda06000-36dda07000 r--p 00006000 fd:00 2616735                        /lib64/librt-2.12.so
+36dda07000-36dda08000 rw-p 00007000 fd:00 2616735                        /lib64/librt-2.12.so
+36ddc00000-36ddc83000 r-xp 00000000 fd:00 2616754                        /lib64/libm-2.12.so
+36ddc83000-36dde82000 ---p 00083000 fd:00 2616754                        /lib64/libm-2.12.so
+36dde82000-36dde83000 r--p 00082000 fd:00 2616754                        /lib64/libm-2.12.so
+36dde83000-36dde84000 rw-p 00083000 fd:00 2616754                        /lib64/libm-2.12.so
+36df400000-36df416000 r-xp 00000000 fd:00 2616737                        /lib64/libresolv-2.12.so
+36df416000-36df616000 ---p 00016000 fd:00 2616737                        /lib64/libresolv-2.12.so
+36df616000-36df617000 r--p 00016000 fd:00 2616737                        /lib64/libresolv-2.12.so
+36df617000-36df618000 rw-p 00017000 fd:00 2616737                        /lib64/libresolv-2.12.so
+36df618000-36df61a000 rw-p 00000000 00:00 0 
+7f379c000000-7f379c021000 rw-p 00000000 00:00 0 
+7f379c021000-7f37a0000000 ---p 00000000 00:00 0 
+7f37a0000000-7f37a0021000 rw-p 00000000 00:00 0 
+7f37a0021000-7f37a4000000 ---p 00000000 00:00 0 
+7f37a4000000-7f37a4021000 rw-p 00000000 00:00 0 
+7f37a4021000-7f37a8000000 ---p 00000000 00:00 0 
+7f37a8000000-7f37a8021000 rw-p 00000000 00:00 0 
+7f37a8021000-7f37ac000000 ---p 00000000 00:00 0 
+7f37ac000000-7f37ac3c7000 rw-p 00000000 00:00 0 
+7f37ac3c7000-7f37b0000000 ---p 00000000 00:00 0 
+7f37b0000000-7f37b01ee000 rw-p 00000000 00:00 0 
+7f37b01ee000-7f37b4000000 ---p 00000000 00:00 0 
+7f37b4000000-7f37b4021000 rw-p 00000000 00:00 0 
+7f37b4021000-7f37b8000000 ---p 00000000 00:00 0 
+7f37ba16f000-7f37c0000000 r--p 00000000 fd:00 3140207                    /usr/lib/locale/locale-archive
+7f37c0000000-7f37c0021000 rw-p 00000000 00:00 0 
+7f37c0021000-7f37c4000000 ---p 00000000 00:00 0 
+7f37c4000000-7f37c4021000 rw-p 00000000 00:00 0 
+7f37c4021000-7f37c8000000 ---p 00000000 00:00 0 
+7f37c9b32000-7f37c9cb2000 rw-p 00000000 00:00 0 
+7f37c9cb2000-7f37c9d32000 ---p 00000000 00:00 0 
+7f37c9d32000-7f37c9d33000 r-xp 00000000 fd:00 14657                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libjaas_unix.so
+7f37c9d33000-7f37c9f32000 ---p 00001000 fd:00 14657                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libjaas_unix.so
+7f37c9f32000-7f37c9f33000 rw-p 00000000 fd:00 14657                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libjaas_unix.so
+7f37c9f33000-7f37c9f36000 ---p 00000000 00:00 0 
+7f37c9f36000-7f37ca034000 rw-p 00000000 00:00 0 
+7f37ca034000-7f37ca037000 ---p 00000000 00:00 0 
+7f37ca037000-7f37ca26d000 rw-p 00000000 00:00 0 
+7f37ca26d000-7f37ca276000 r-xp 00000000 fd:00 14680                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libmanagement.so
+7f37ca276000-7f37ca475000 ---p 00009000 fd:00 14680                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libmanagement.so
+7f37ca475000-7f37ca476000 rw-p 00008000 fd:00 14680                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libmanagement.so
+7f37ca476000-7f37ca676000 rw-p 00000000 00:00 0 
+7f37ca676000-7f37ca67b000 r-xp 00000000 fd:00 2616350                    /lib64/libnss_dns-2.12.so
+7f37ca67b000-7f37ca87a000 ---p 00005000 fd:00 2616350                    /lib64/libnss_dns-2.12.so
+7f37ca87a000-7f37ca87b000 r--p 00004000 fd:00 2616350                    /lib64/libnss_dns-2.12.so
+7f37ca87b000-7f37ca87c000 rw-p 00005000 fd:00 2616350                    /lib64/libnss_dns-2.12.so
+7f37ca887000-7f37caa8a000 rw-p 00000000 00:00 0 
+7f37caa8a000-7f37caaa0000 r-xp 00000000 fd:00 14672                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libnet.so
+7f37caaa0000-7f37caca0000 ---p 00016000 fd:00 14672                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libnet.so
+7f37caca0000-7f37caca1000 rw-p 00016000 fd:00 14672                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libnet.so
+7f37caca1000-7f37caea1000 rw-p 00000000 00:00 0 
+7f37caea1000-7f37caebd000 r--s 001af000 fd:00 1705480                    /home/cloudera/.m2/repository/org/apache/parquet/parquet-jackson/1.12.2/parquet-jackson-1.12.2.jar
+7f37caebd000-7f37caec9000 r--s 000a1000 fd:00 1705477                    /home/cloudera/.m2/repository/org/apache/parquet/parquet-format-structures/1.12.2/parquet-format-structures-1.12.2.jar
+7f37caec9000-7f37caed8000 r--s 000e0000 fd:00 1705474                    /home/cloudera/.m2/repository/org/apache/parquet/parquet-hadoop/1.12.2/parquet-hadoop-1.12.2.jar
+7f37caed8000-7f37caee3000 r--s 000c5000 fd:00 1705471                    /home/cloudera/.m2/repository/org/apache/parquet/parquet-encoding/1.12.2/parquet-encoding-1.12.2.jar
+7f37caee3000-7f37caee6000 r--s 00015000 fd:00 1705468                    /home/cloudera/.m2/repository/org/apache/parquet/parquet-common/1.12.2/parquet-common-1.12.2.jar
+7f37caee6000-7f37caf0d000 r--s 001c0000 fd:00 1705465                    /home/cloudera/.m2/repository/org/apache/parquet/parquet-column/1.12.2/parquet-column-1.12.2.jar
+7f37caf0d000-7f37caf11000 r--s 00036000 fd:00 1705462                    /home/cloudera/.m2/repository/org/apache/hive/hive-storage-api/2.7.2/hive-storage-api-2.7.2.jar
+7f37caf11000-7f37caf12000 r--s 0000b000 fd:00 1705459                    /home/cloudera/.m2/repository/org/apache/orc/orc-mapreduce/1.6.12/orc-mapreduce-1.6.12.jar
+7f37caf12000-7f37caf16000 r--s 00036000 fd:00 1705456                    /home/cloudera/.m2/repository/org/threeten/threeten-extra/1.5.0/threeten-extra-1.5.0.jar
+7f37caf16000-7f37caf18000 r--s 00003000 fd:00 1705453                    /home/cloudera/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar
+7f37caf18000-7f37caf1b000 r--s 0002a000 fd:00 1705450                    /home/cloudera/.m2/repository/io/airlift/aircompressor/0.21/aircompressor-0.21.jar
+7f37caf1b000-7f37caf1d000 r--s 00006000 fd:00 1705447                    /home/cloudera/.m2/repository/org/apache/orc/orc-shims/1.6.12/orc-shims-1.6.12.jar
+7f37caf1d000-7f37caf29000 r--s 000eb000 fd:00 1705444                    /home/cloudera/.m2/repository/org/apache/orc/orc-core/1.6.12/orc-core-1.6.12.jar
+7f37caf29000-7f37caf2a000 r--s 00009000 fd:00 1705441                    /home/cloudera/.m2/repository/org/apache/arrow/arrow-memory-netty/2.0.0/arrow-memory-netty-2.0.0.jar
+7f37caf2a000-7f37caf2b000 r--s 00004000 fd:00 1705438                    /home/cloudera/.m2/repository/com/google/flatbuffers/flatbuffers-java/1.9.0/flatbuffers-java-1.9.0.jar
+7f37caf2b000-7f37caf2e000 r--s 00016000 fd:00 1705435                    /home/cloudera/.m2/repository/org/apache/arrow/arrow-memory-core/2.0.0/arrow-memory-core-2.0.0.jar
+7f37caf2e000-7f37caf30000 r--s 00010000 fd:00 1705432                    /home/cloudera/.m2/repository/org/apache/arrow/arrow-format/2.0.0/arrow-format-2.0.0.jar
+7f37caf30000-7f37caf43000 r--s 0018f000 fd:00 1705429                    /home/cloudera/.m2/repository/org/apache/arrow/arrow-vector/2.0.0/arrow-vector-2.0.0.jar
+7f37caf43000-7f37caf46000 r--s 00016000 fd:00 1705426                    /home/cloudera/.m2/repository/javax/xml/bind/jaxb-api/2.2.11/jaxb-api-2.2.11.jar
+7f37caf46000-7f37caf4c000 r--s 0004d000 fd:00 1705423                    /home/cloudera/.m2/repository/org/antlr/antlr4-runtime/4.8/antlr4-runtime-4.8.jar
+7f37caf4c000-7f37caf4f000 r--s 0000f000 fd:00 1705420                    /home/cloudera/.m2/repository/org/codehaus/janino/commons-compiler/3.0.16/commons-compiler-3.0.16.jar
+7f37caf4f000-7f37caf5d000 r--s 000d5000 fd:00 1705417                    /home/cloudera/.m2/repository/org/codehaus/janino/janino/3.0.16/janino-3.0.16.jar
+7f37caf5d000-7f37caf61000 r--s 00033000 fd:00 1705414                    /home/cloudera/.m2/repository/org/scala-lang/modules/scala-parser-combinators_2.12/1.1.2/scala-parser-combinators_2.12-1.1.2.jar
+7f37caf61000-7f37cafd3000 r--s 00aa9000 fd:00 1705411                    /home/cloudera/.m2/repository/org/apache/spark/spark-catalyst_2.12/3.2.1/spark-catalyst_2.12-3.2.1.jar
+7f37cafd3000-7f37cafd5000 r--s 00006000 fd:00 1705408                    /home/cloudera/.m2/repository/org/apache/spark/spark-sketch_2.12/3.2.1/spark-sketch_2.12-3.2.1.jar
+7f37cafd5000-7f37cafde000 r--s 00065000 fd:00 1452927                    /home/cloudera/.m2/repository/com/univocity/univocity-parsers/2.9.1/univocity-parsers-2.9.1.jar
+7f37cafde000-7f37cafe4000 r--s 02264000 fd:00 3417870                    /home/cloudera/.m2/repository/org/rocksdb/rocksdbjni/6.20.3/rocksdbjni-6.20.3.jar
+7f37cafe4000-7f37cb02f000 r--s 007aa000 fd:00 1191209                    /home/cloudera/.m2/repository/org/apache/spark/spark-sql_2.12/3.2.1/spark-sql_2.12-3.2.1.jar
+7f37cb02f000-7f37cb039000 r--s 00087000 fd:00 1573488                    /home/cloudera/.m2/repository/org/apache/hbase/hbase-common/1.3.1/hbase-common-1.3.1.jar
+7f37cb039000-7f37cb03a000 r--s 00005000 fd:00 1702996                    /home/cloudera/.m2/repository/commons-daemon/commons-daemon/1.0.13/commons-daemon-1.0.13.jar
+7f37cb03a000-7f37cb097000 r--s 00668000 fd:00 1573485                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-hdfs/2.5.1/hadoop-hdfs-2.5.1.jar
+7f37cb097000-7f37cb098000 r--s 00008000 fd:00 1705405                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-jobclient/2.5.1/hadoop-mapreduce-client-jobclient-2.5.1.jar
+7f37cb098000-7f37cb0af000 r--s 0017c000 fd:00 1573687                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-yarn-api/2.5.1/hadoop-yarn-api-2.5.1.jar
+7f37cb0af000-7f37cb0b1000 r--s 00009000 fd:00 1705402                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-shuffle/2.5.1/hadoop-mapreduce-client-shuffle-2.5.1.jar
+7f37cb0b1000-7f37cb0b6000 r--s 00037000 fd:00 1705399                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-yarn-server-common/2.5.1/hadoop-yarn-server-common-2.5.1.jar
+7f37cb0b6000-7f37cb0b9000 r--s 0001d000 fd:00 1576376                    /home/cloudera/.m2/repository/com/sun/jersey/jersey-client/1.9/jersey-client-1.9.jar
+7f37cb0b9000-7f37cb0bc000 r--s 0001a000 fd:00 1705396                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-yarn-client/2.5.1/hadoop-yarn-client-2.5.1.jar
+7f37cb0bc000-7f37cb0c7000 r--s 00097000 fd:00 1705393                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-common/2.5.1/hadoop-mapreduce-client-common-2.5.1.jar
+7f37cb0c7000-7f37cb0d0000 r--s 0006f000 fd:00 1705390                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-app/2.5.1/hadoop-mapreduce-client-app-2.5.1.jar
+7f37cb0d0000-7f37cb0d1000 r--s 00000000 fd:00 1055835                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-client/2.5.1/hadoop-client-2.5.1.jar
+7f37cb0d1000-7f37cb0d4000 r--s 00011000 fd:00 1702993                    /home/cloudera/.m2/repository/com/lmax/disruptor/3.3.0/disruptor-3.3.0.jar
+7f37cb0d4000-7f37cb0d5000 r--s 00005000 fd:00 1702990                    /home/cloudera/.m2/repository/org/jamon/jamon-runtime/2.4.1/jamon-runtime-2.4.1.jar
+7f37cb0d5000-7f37cb0d7000 r--s 00011000 fd:00 1702987                    /home/cloudera/.m2/repository/tomcat/jasper-runtime/5.5.23/jasper-runtime-5.5.23.jar
+7f37cb0d7000-7f37cb0dc000 r--s 0005f000 fd:00 1702984                    /home/cloudera/.m2/repository/tomcat/jasper-compiler/5.5.23/jasper-compiler-5.5.23.jar
+7f37cb0dc000-7f37cb0dd000 r--s 00004000 fd:00 1055616                    /home/cloudera/.m2/repository/org/codehaus/jackson/jackson-jaxrs/1.9.13/jackson-jaxrs-1.9.13.jar
+7f37cb0dd000-7f37cb0e1000 r--s 00035000 fd:00 135020                     /home/cloudera/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar
+7f37cb0e1000-7f37cb0e4000 r--s 0001e000 fd:00 1702981                    /home/cloudera/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.14/servlet-api-2.5-6.1.14.jar
+7f37cb0e4000-7f37cb0e7000 r--s 0001e000 fd:00 1702978                    /home/cloudera/.m2/repository/org/mortbay/jetty/jsp-api-2.1/6.1.14/jsp-api-2.1-6.1.14.jar
+7f37cb0e7000-7f37cb0f8000 r--s 000ea000 fd:00 1702975                    /home/cloudera/.m2/repository/org/mortbay/jetty/jsp-2.1/6.1.14/jsp-2.1-6.1.14.jar
+7f37cb0f8000-7f37cb0f9000 r--s 00004000 fd:00 1702972                    /home/cloudera/.m2/repository/org/mortbay/jetty/jetty-sslengine/6.1.26/jetty-sslengine-6.1.26.jar
+7f37cb0f9000-7f37cb0fd000 r--s 00028000 fd:00 1319532                    /home/cloudera/.m2/repository/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar
+7f37cb0fd000-7f37cb104000 r--s 0007d000 fd:00 1702969                    /home/cloudera/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar
+7f37cb104000-7f37cb117000 r--s 000df000 fd:00 135637                     /home/cloudera/.m2/repository/org/apache/commons/commons-math/2.2/commons-math-2.2.jar
+7f37cb117000-7f37cb119000 r--s 00009000 fd:00 15116                      /home/cloudera/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar
+7f37cb119000-7f37cb11a000 r--s 0000a000 fd:00 1576493                    /home/cloudera/.m2/repository/asm/asm/3.1/asm-3.1.jar
+7f37cb11a000-7f37cb12c000 r--s 0009d000 fd:00 1576490                    /home/cloudera/.m2/repository/com/sun/jersey/jersey-server/1.9/jersey-server-1.9.jar
+7f37cb12c000-7f37cb136000 r--s 00066000 fd:00 1576496                    /home/cloudera/.m2/repository/com/sun/jersey/jersey-core/1.9/jersey-core-1.9.jar
+7f37cb136000-7f37cb13a000 r--s 00019000 fd:00 1702966                    /home/cloudera/.m2/repository/org/apache/hbase/hbase-hadoop2-compat/1.3.1/hbase-hadoop2-compat-1.3.1.jar
+7f37cb13a000-7f37cb13c000 r--s 00009000 fd:00 1702963                    /home/cloudera/.m2/repository/org/apache/hbase/hbase-hadoop-compat/1.3.1/hbase-hadoop-compat-1.3.1.jar
+7f37cb13c000-7f37cb142000 r--s 00045000 fd:00 919338                     /home/cloudera/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar
+7f37cb142000-7f37cb144000 r--s 00017000 fd:00 1702960                    /home/cloudera/.m2/repository/org/apache/hbase/hbase-prefix-tree/1.3.1/hbase-prefix-tree-1.3.1.jar
+7f37cb144000-7f37cb149000 r--s 00034000 fd:00 1573479                    /home/cloudera/.m2/repository/org/apache/hbase/hbase-common/1.3.1/hbase-common-1.3.1-tests.jar
+7f37cb149000-7f37cb14c000 r--s 0001c000 fd:00 1702957                    /home/cloudera/.m2/repository/org/apache/hbase/hbase-procedure/1.3.1/hbase-procedure-1.3.1.jar
+7f37cb14c000-7f37cb183000 r--s 003fb000 fd:00 1702954                    /home/cloudera/.m2/repository/org/apache/hbase/hbase-server/1.3.1/hbase-server-1.3.1.jar
+7f37cb183000-7f37cb185000 r--s 00002000 fd:00 1573476                    /home/cloudera/.m2/repository/com/github/stephenc/findbugs/findbugs-annotations/1.3.9-1/findbugs-annotations-1.3.9-1.jar
+7f37cb185000-7f37cb187000 r--s 00009000 fd:00 1573473                    /home/cloudera/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+7f37cb187000-7f37cb18f000 r--s 00045000 fd:00 1573470                    /home/cloudera/.m2/repository/junit/junit/4.12/junit-4.12.jar
+7f37cb18f000-7f37cb1a6000 r--s 0010e000 fd:00 1705387                    /home/cloudera/.m2/repository/io/netty/netty/3.6.2.Final/netty-3.6.2.Final.jar
+7f37cb1a6000-7f37cb1ba000 r--s 00146000 fd:00 1702948                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-yarn-common/2.5.1/hadoop-yarn-common-2.5.1.jar
+7f37cb1ba000-7f37cb1d2000 r--s 00156000 fd:00 1702945                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-core/2.5.1/hadoop-mapreduce-client-core-2.5.1.jar
+7f37cb1d2000-7f37cb1d5000 r--s 0002b000 fd:00 1702942                    /home/cloudera/.m2/repository/com/jcraft/jsch/0.1.42/jsch-0.1.42.jar
+7f37cb1d5000-7f37cb1d9000 r--s 0002f000 fd:00 1190413                    /home/cloudera/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar
+7f37cb1d9000-7f37cb1de000 r--s 0002a000 fd:00 1190410                    /home/cloudera/.m2/repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar
+7f37cb1de000-7f37cb1e2000 r--s 00020000 fd:00 1190407                    /home/cloudera/.m2/repository/commons-digester/commons-digester/1.8/commons-digester-1.8.jar
+7f37cb1e2000-7f37cb1e8000 r--s 00043000 fd:00 1054509                    /home/cloudera/.m2/repository/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar
+7f37cb1e8000-7f37cb1eb000 r--s 00019000 fd:00 1702939                    /home/cloudera/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar
+7f37cb1eb000-7f37cb1ec000 r--s 00003000 fd:00 919332                     /home/cloudera/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar
+7f37cb1ec000-7f37cb265000 r--s 010f9000 fd:00 3543844                    /usr/java/jdk1.8.0_181/lib/tools.jar
+7f37cb265000-7f37cb267000 r--s 00003000 fd:00 1705384                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-annotations/2.5.1/hadoop-annotations-2.5.1.jar
+7f37cb267000-7f37cb296000 r--s 002a5000 fd:00 1702936                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-common/2.5.1/hadoop-common-2.5.1.jar
+7f37cb296000-7f37cb298000 r--s 00012000 fd:00 1702933                    /home/cloudera/.m2/repository/org/apache/directory/api/api-util/1.0.0-M20/api-util-1.0.0-M20.jar
+7f37cb298000-7f37cb29a000 r--s 00003000 fd:00 1573467                    /home/cloudera/.m2/repository/org/apache/directory/api/api-asn1-api/1.0.0-M20/api-asn1-api-1.0.0-M20.jar
+7f37cb29a000-7f37cb29b000 r--s 0000a000 fd:00 1702930                    /home/cloudera/.m2/repository/org/apache/directory/server/apacheds-i18n/2.0.0-M15/apacheds-i18n-2.0.0-M15.jar
+7f37cb29b000-7f37cb2ad000 r--s 00097000 fd:00 135634                     /home/cloudera/.m2/repository/org/apache/directory/server/apacheds-kerberos-codec/2.0.0-M15/apacheds-kerberos-codec-2.0.0-M15.jar
+7f37cb2ad000-7f37cb2b3000 r--s 00032000 fd:00 1702927                    /home/cloudera/.m2/repository/org/apache/httpcomponents/httpcore/4.2.4/httpcore-4.2.4.jar
+7f37cb2b3000-7f37cb2bc000 r--s 00061000 fd:00 1317900                    /home/cloudera/.m2/repository/org/apache/httpcomponents/httpclient/4.2.5/httpclient-4.2.5.jar
+7f37cb2bc000-7f37cb2be000 r--s 0000b000 fd:00 1702924                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-auth/2.5.1/hadoop-auth-2.5.1.jar
+7f37cb2be000-7f37cb2c1000 r--s 00012000 fd:00 1702921                    /home/cloudera/.m2/repository/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.jar
+7f37cb2c1000-7f37cb2c4000 r--s 0002b000 fd:00 1702918                    /home/cloudera/.m2/repository/org/jruby/joni/joni/2.1.2/joni-2.1.2.jar
+7f37cb2c4000-7f37cb2cd000 r--s 00133000 fd:00 1702915                    /home/cloudera/.m2/repository/org/jruby/jcodings/jcodings/1.0.8/jcodings-1.0.8.jar
+7f37cb2cd000-7f37cb2db000 r--s 000b1000 fd:00 135023                     /home/cloudera/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar
+7f37cb2db000-7f37cb2f4000 r--s 00150000 fd:00 3544779                    /home/cloudera/.m2/repository/org/apache/htrace/htrace-core/3.1.0-incubating/htrace-core-3.1.0-incubating.jar
+7f37cb2f4000-7f37cb2fc000 r--s 0007b000 fd:00 1190428                    /home/cloudera/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar
+7f37cb2fc000-7f37cb31e000 r--s 00195000 fd:00 1317897                    /home/cloudera/.m2/repository/com/google/guava/guava/12.0.1/guava-12.0.1.jar
+7f37cb31e000-7f37cb320000 r--s 0000e000 fd:00 1573464                    /home/cloudera/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+7f37cb320000-7f37cb325000 r--s 00041000 fd:00 1573461                    /home/cloudera/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+7f37cb325000-7f37cb360000 r--s 00410000 fd:00 1573458                    /home/cloudera/.m2/repository/org/apache/hbase/hbase-protocol/1.3.1/hbase-protocol-1.3.1.jar
+7f37cb360000-7f37cb362000 r--s 00004000 fd:00 1573455                    /home/cloudera/.m2/repository/org/apache/hbase/hbase-annotations/1.3.1/hbase-annotations-1.3.1.jar
+7f37cb362000-7f37cb375000 r--s 00133000 fd:00 3417837                    /home/cloudera/.m2/repository/org/apache/hbase/hbase-client/1.3.1/hbase-client-1.3.1.jar
+7f37cb375000-7f37cb376000 r--s 00000000 fd:00 1576547                    /home/cloudera/.m2/repository/org/spark-project/spark/unused/1.0.0/unused-1.0.0.jar
+7f37cb376000-7f37cb379000 r--s 00026000 fd:00 1705381                    /home/cloudera/.m2/repository/org/apache/commons/commons-crypto/1.1.0/commons-crypto-1.1.0.jar
+7f37cb379000-7f37cb37a000 r--s 00003000 fd:00 1705378                    /home/cloudera/.m2/repository/org/apache/spark/spark-tags_2.12/3.2.1/spark-tags_2.12-3.2.1.jar
+7f37cb37a000-7f37cb37d000 r--s 0001c000 fd:00 1705375                    /home/cloudera/.m2/repository/net/sf/py4j/py4j/0.10.9.3/py4j-0.10.9.3.jar
+7f37cb37d000-7f37cb37f000 r--s 00017000 fd:00 1573684                    /home/cloudera/.m2/repository/net/razorvine/pyrolite/4.30/pyrolite-4.30.jar
+7f37cb37f000-7f37cb381000 r--s 0000e000 fd:00 1576526                    /home/cloudera/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar
+7f37cb381000-7f37cb397000 r--s 00141000 fd:00 1055832                    /home/cloudera/.m2/repository/org/apache/ivy/ivy/2.5.0/ivy-2.5.0.jar
+7f37cb397000-7f37cb399000 r--s 00007000 fd:00 1705372                    /home/cloudera/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.jar
+7f37cb399000-7f37cb3a0000 r--s 0005d000 fd:00 1705369                    /home/cloudera/.m2/repository/com/fasterxml/jackson/module/jackson-module-scala_2.12/2.12.3/jackson-module-scala_2.12-2.12.3.jar
+7f37cb3a0000-7f37cb3b7000 r--s 0015c000 fd:00 1705366                    /home/cloudera/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar
+7f37cb3b7000-7f37cb3b9000 r--s 00004000 fd:00 1705363                    /home/cloudera/.m2/repository/io/dropwizard/metrics/metrics-jmx/4.2.0/metrics-jmx-4.2.0.jar
+7f37cb3b9000-7f37cb3ba000 r--s 00005000 fd:00 1705360                    /home/cloudera/.m2/repository/io/dropwizard/metrics/metrics-graphite/4.2.0/metrics-graphite-4.2.0.jar
+7f37cb3ba000-7f37cb3bc000 r--s 00003000 fd:00 1705357                    /home/cloudera/.m2/repository/io/dropwizard/metrics/metrics-json/4.2.0/metrics-json-4.2.0.jar
+7f37cb3bc000-7f37cb3bd000 r--s 00005000 fd:00 1705354                    /home/cloudera/.m2/repository/io/dropwizard/metrics/metrics-jvm/4.2.0/metrics-jvm-4.2.0.jar
+7f37cb3bd000-7f37cb3c0000 r--s 0001c000 fd:00 1705351                    /home/cloudera/.m2/repository/io/dropwizard/metrics/metrics-core/4.2.0/metrics-core-4.2.0.jar
+7f37cb3c0000-7f37cb3c4000 r--s 00028000 fd:00 1573681                    /home/cloudera/.m2/repository/com/clearspring/analytics/stream/2.9.6/stream-2.9.6.jar
+7f37cb3c4000-7f37cb410000 r--s 00403000 fd:00 1705348                    /home/cloudera/.m2/repository/io/netty/netty-all/4.1.68.Final/netty-all-4.1.68.Final.jar
+7f37cb410000-7f37cb41b000 r--s 000b4000 fd:00 3417867                    /home/cloudera/.m2/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA.jar
+7f37cb41b000-7f37cb41f000 r--s 0001d000 fd:00 1705345                    /home/cloudera/.m2/repository/org/glassfish/hk2/hk2-utils/2.6.1/hk2-utils-2.6.1.jar
+7f37cb41f000-7f37cb424000 r--s 0002c000 fd:00 1705342                    /home/cloudera/.m2/repository/org/glassfish/hk2/hk2-api/2.6.1/hk2-api-2.6.1.jar
+7f37cb424000-7f37cb426000 r--s 00005000 fd:00 1705339                    /home/cloudera/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.6.1/aopalliance-repackaged-2.6.1.jar
+7f37cb426000-7f37cb42a000 r--s 0002e000 fd:00 1705336                    /home/cloudera/.m2/repository/org/glassfish/hk2/hk2-locator/2.6.1/hk2-locator-2.6.1.jar
+7f37cb42a000-7f37cb42c000 r--s 00011000 fd:00 1705333                    /home/cloudera/.m2/repository/org/glassfish/jersey/inject/jersey-hk2/2.34/jersey-hk2-2.34.jar
+7f37cb42c000-7f37cb42e000 r--s 00010000 fd:00 1705330                    /home/cloudera/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet-core/2.34/jersey-container-servlet-core-2.34.jar
+7f37cb42e000-7f37cb42f000 r--s 00007000 fd:00 1705327                    /home/cloudera/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet/2.34/jersey-container-servlet-2.34.jar
+7f37cb42f000-7f37cb434000 r--s 00012000 fd:00 1705324                    /home/cloudera/.m2/repository/jakarta/validation/jakarta.validation-api/2.0.2/jakarta.validation-api-2.0.2.jar
+7f37cb434000-7f37cb448000 r--s 000d4000 fd:00 1705321                    /home/cloudera/.m2/repository/org/glassfish/jersey/core/jersey-server/2.34/jersey-server-2.34.jar
+7f37cb448000-7f37cb449000 r--s 00004000 fd:00 1705318                    /home/cloudera/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.3/osgi-resource-locator-1.0.3.jar
+7f37cb449000-7f37cb44b000 r--s 00005000 fd:00 1452924                    /home/cloudera/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar
+7f37cb44b000-7f37cb464000 r--s 00109000 fd:00 1705315                    /home/cloudera/.m2/repository/org/glassfish/jersey/core/jersey-common/2.34/jersey-common-2.34.jar
+7f37cb464000-7f37cb465000 r--s 00004000 fd:00 1705312                    /home/cloudera/.m2/repository/org/glassfish/hk2/external/jakarta.inject/2.6.1/jakarta.inject-2.6.1.jar
+7f37cb465000-7f37cb469000 r--s 0001f000 fd:00 1055829                    /home/cloudera/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/2.1.6/jakarta.ws.rs-api-2.1.6.jar
+7f37cb469000-7f37cb46f000 r--s 0003a000 fd:00 1705309                    /home/cloudera/.m2/repository/org/glassfish/jersey/core/jersey-client/2.34/jersey-client-2.34.jar
+7f37cb46f000-7f37cb474000 r--s 00051000 fd:00 1705306                    /home/cloudera/.m2/repository/org/json4s/json4s-scalap_2.12/3.7.0-M11/json4s-scalap_2.12-3.7.0-M11.jar
+7f37cb474000-7f37cb476000 r--s 00014000 fd:00 1705303                    /home/cloudera/.m2/repository/org/json4s/json4s-ast_2.12/3.7.0-M11/json4s-ast_2.12-3.7.0-M11.jar
+7f37cb476000-7f37cb47c000 r--s 0007b000 fd:00 1705300                    /home/cloudera/.m2/repository/org/json4s/json4s-core_2.12/3.7.0-M11/json4s-core_2.12-3.7.0-M11.jar
+7f37cb47c000-7f37cb47e000 r--s 00008000 fd:00 1705297                    /home/cloudera/.m2/repository/org/json4s/json4s-jackson_2.12/3.7.0-M11/json4s-jackson_2.12-3.7.0-M11.jar
+7f37cb47e000-7f37cb4a2000 r--s 0035e000 fd:00 1705294                    /home/cloudera/.m2/repository/org/scala-lang/scala-reflect/2.12.15/scala-reflect-2.12.15.jar
+7f37cb4a2000-7f37cb4db000 r--s 004f8000 fd:00 1705291                    /home/cloudera/.m2/repository/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15.jar
+7f37cb4db000-7f37cb4e0000 r--s 00083000 fd:00 1705288                    /home/cloudera/.m2/repository/org/scala-lang/modules/scala-xml_2.12/1.2.0/scala-xml_2.12-1.2.0.jar
+7f37cb4e0000-7f37cb4e5000 r--s 0003e000 fd:00 1055824                    /home/cloudera/.m2/repository/commons-net/commons-net/3.1/commons-net-3.1.jar
+7f37cb4e5000-7f37cb4e6000 r--s 00000000 fd:00 1705285                    /home/cloudera/.m2/repository/org/roaringbitmap/shims/0.9.0/shims-0.9.0.jar
+7f37cb4e6000-7f37cb4eb000 r--s 0005a000 fd:00 1573678                    /home/cloudera/.m2/repository/org/roaringbitmap/RoaringBitmap/0.9.0/RoaringBitmap-0.9.0.jar
+7f37cb4eb000-7f37cb4ed000 r--s 00673000 fd:00 1573452                    /home/cloudera/.m2/repository/com/github/luben/zstd-jni/1.5.0-4/zstd-jni-1.5.0-4.jar
+7f37cb4ed000-7f37cb4f0000 r--s 0009c000 fd:00 3417864                    /home/cloudera/.m2/repository/org/lz4/lz4-java/1.7.1/lz4-java-1.7.1.jar
+7f37cb4f0000-7f37cb4f4000 r--s 001de000 fd:00 1573675                    /home/cloudera/.m2/repository/org/xerial/snappy/snappy-java/1.1.8.4/snappy-java-1.1.8.4.jar
+7f37cb4f4000-7f37cb4f6000 r--s 00012000 fd:00 1319541                    /home/cloudera/.m2/repository/com/ning/compress-lzf/1.0.3/compress-lzf-1.0.3.jar
+7f37cb4f6000-7f37cb4f7000 r--s 00002000 fd:00 1705282                    /home/cloudera/.m2/repository/org/slf4j/slf4j-log4j12/1.7.30/slf4j-log4j12-1.7.30.jar
+7f37cb4f7000-7f37cb500000 r--s 0006f000 fd:00 1054521                    /home/cloudera/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar
+7f37cb500000-7f37cb502000 r--s 00003000 fd:00 1705279                    /home/cloudera/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar
+7f37cb502000-7f37cb504000 r--s 00000000 fd:00 1705276                    /home/cloudera/.m2/repository/org/slf4j/jul-to-slf4j/1.7.30/jul-to-slf4j-1.7.30.jar
+7f37cb504000-7f37cb506000 r--s 00009000 fd:00 1573672                    /home/cloudera/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar
+7f37cb506000-7f37cb509000 r--s 00006000 fd:00 1705273                    /home/cloudera/.m2/repository/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar
+7f37cb509000-7f37cb516000 r--s 00083000 fd:00 1573482                    /home/cloudera/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar
+7f37cb516000-7f37cb51c000 r--s 00040000 fd:00 1191206                    /home/cloudera/.m2/repository/commons-io/commons-io/2.8.0/commons-io-2.8.0.jar
+7f37cb51c000-7f37cb521000 r--s 0002c000 fd:00 1705270                    /home/cloudera/.m2/repository/org/apache/commons/commons-text/1.6/commons-text-1.6.jar
+7f37cb521000-7f37cb545000 r--s 001cd000 fd:00 660244                     /home/cloudera/.m2/repository/org/apache/commons/commons-math3/3.4.1/commons-math3-3.4.1.jar
+7f37cb545000-7f37cb54f000 r--s 00086000 fd:00 135712                     /home/cloudera/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar
+7f37cb54f000-7f37cb556000 r--s 00050000 fd:00 1055821                    /home/cloudera/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar
+7f37cb556000-7f37cb55a000 r--s 00011000 fd:00 3544866                    /home/cloudera/.m2/repository/jakarta/servlet/jakarta.servlet-api/4.0.3/jakarta.servlet-api-4.0.3.jar
+7f37cb55a000-7f37cb55b000 r--s 00004000 fd:00 3417861                    /home/cloudera/.m2/repository/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.jar
+7f37cb55b000-7f37cb55f000 r--s 0003a000 fd:00 1705267                    /home/cloudera/.m2/repository/org/apache/zookeeper/zookeeper-jute/3.6.2/zookeeper-jute-3.6.2.jar
+7f37cb55f000-7f37cb571000 r--s 0011f000 fd:00 1705264                    /home/cloudera/.m2/repository/org/apache/zookeeper/zookeeper/3.6.2/zookeeper-3.6.2.jar
+7f37cb571000-7f37cb5a8000 r--s 00219000 fd:00 1705261                    /home/cloudera/.m2/repository/org/apache/curator/curator-client/2.13.0/curator-client-2.13.0.jar
+7f37cb5a8000-7f37cb5ae000 r--s 0002c000 fd:00 1705258                    /home/cloudera/.m2/repository/org/apache/curator/curator-framework/2.13.0/curator-framework-2.13.0.jar
+7f37cb5ae000-7f37cb5b6000 r--s 0003e000 fd:00 1452921                    /home/cloudera/.m2/repository/org/apache/curator/curator-recipes/2.13.0/curator-recipes-2.13.0.jar
+7f37cb5b6000-7f37cb5b8000 r--s 0000f000 fd:00 1318270                    /home/cloudera/.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar
+7f37cb5b8000-7f37cb5ba000 r--s 0000b000 fd:00 1705255                    /home/cloudera/.m2/repository/org/apache/spark/spark-unsafe_2.12/3.2.1/spark-unsafe_2.12-3.2.1.jar
+7f37cb5ba000-7f37cb5be000 r--s 00024000 fd:00 1705252                    /home/cloudera/.m2/repository/org/apache/spark/spark-network-shuffle_2.12/3.2.1/spark-network-shuffle_2.12-3.2.1.jar
+7f37cb5be000-7f37cb5c3000 r--s 00036000 fd:00 1191203                    /home/cloudera/.m2/repository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar
+7f37cb5c3000-7f37cb5d5000 r--s 00132000 fd:00 1705249                    /home/cloudera/.m2/repository/com/google/crypto/tink/tink/1.6.0/tink-1.6.0.jar
+7f37cb5d5000-7f37cb603000 r--s 0021f000 fd:00 1705246                    /home/cloudera/.m2/repository/org/apache/spark/spark-network-common_2.12/3.2.1/spark-network-common_2.12-3.2.1.jar
+7f37cb603000-7f37cb61d000 r--s 00155000 fd:00 3417858                    /home/cloudera/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar
+7f37cb61d000-7f37cb66a000 rw-p 00000000 00:00 0 
+7f37cb66a000-7f37cb8d1000 r--s 01bd9000 fd:00 1705240                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-client-runtime/3.3.1/hadoop-client-runtime-3.3.1.jar
+7f37cb8d1000-7f37cb8f5000 rw-p 00000000 00:00 0 
+7f37cb8f5000-7f37cb9fa000 r--s 0117d000 fd:00 1705237                    /home/cloudera/.m2/repository/org/apache/hadoop/hadoop-client-api/3.3.1/hadoop-client-api-3.3.1.jar
+7f37cb9fa000-7f37cb9fb000 ---p 00000000 00:00 0 
+7f37cb9fb000-7f37cbafb000 rw-p 00000000 00:00 0 
+7f37cbafb000-7f37cbafe000 ---p 00000000 00:00 0 
+7f37cbafe000-7f37cbbfc000 rw-p 00000000 00:00 0 
+7f37cbbfc000-7f37cbbff000 ---p 00000000 00:00 0 
+7f37cbbff000-7f37cbcfd000 rw-p 00000000 00:00 0 
+7f37cbcfd000-7f37cbd00000 ---p 00000000 00:00 0 
+7f37cbd00000-7f37cbdfe000 rw-p 00000000 00:00 0 
+7f37cbdfe000-7f37cbe01000 ---p 00000000 00:00 0 
+7f37cbe01000-7f37cbeff000 rw-p 00000000 00:00 0 
+7f37cbeff000-7f37cbf02000 ---p 00000000 00:00 0 
+7f37cbf02000-7f37cc000000 rw-p 00000000 00:00 0 
+7f37cc000000-7f37cc021000 rw-p 00000000 00:00 0 
+7f37cc021000-7f37d0000000 ---p 00000000 00:00 0 
+7f37d0000000-7f37d0021000 rw-p 00000000 00:00 0 
+7f37d0021000-7f37d4000000 ---p 00000000 00:00 0 
+7f37d4000000-7f37d4021000 rw-p 00000000 00:00 0 
+7f37d4021000-7f37d8000000 ---p 00000000 00:00 0 
+7f37d8000000-7f37d8003000 r--s 00010000 fd:00 1191200                    /home/cloudera/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar
+7f37d8003000-7f37d8006000 ---p 00000000 00:00 0 
+7f37d8006000-7f37d8104000 rw-p 00000000 00:00 0 
+7f37d8104000-7f37d8105000 ---p 00000000 00:00 0 
+7f37d8105000-7f37dd000000 rw-p 00000000 00:00 0 
+7f37dd000000-7f37dd4b0000 rwxp 00000000 00:00 0 
+7f37dd4b0000-7f37ec000000 ---p 00000000 00:00 0 
+7f37ec000000-7f37eec17000 rw-p 00000000 00:00 0 
+7f37eec17000-7f37f0000000 ---p 00000000 00:00 0 
+7f37f0000000-7f37f0008000 r--s 0005d000 fd:00 1573669                    /home/cloudera/.m2/repository/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2.jar
+7f37f0008000-7f37f000b000 r--s 00031000 fd:00 1318267                    /home/cloudera/.m2/repository/com/twitter/chill_2.12/0.10.0/chill_2.12-0.10.0.jar
+7f37f000b000-7f37f000f000 r--s 00017000 fd:00 1055818                    /home/cloudera/.m2/repository/org/tukaani/xz/1.8/xz-1.8.jar
+7f37f000f000-7f37f0012000 r--s 0002b000 fd:00 135709                     /home/cloudera/.m2/repository/org/apache/avro/avro-ipc/1.10.2/avro-ipc-1.10.2.jar
+7f37f0012000-7f37f0016000 r--s 0002a000 fd:00 1318262                    /home/cloudera/.m2/repository/org/apache/avro/avro-mapred/1.10.2/avro-mapred-1.10.2.jar
+7f37f0016000-7f37f0022000 r--s 0008f000 fd:00 135706                     /home/cloudera/.m2/repository/org/apache/commons/commons-compress/1.20/commons-compress-1.20.jar
+7f37f0022000-7f37f0027000 r--s 00055000 fd:00 1705225                    /home/cloudera/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.2/jackson-core-2.12.2.jar
+7f37f0027000-7f37f0032000 r--s 00086000 fd:00 1705222                    /home/cloudera/.m2/repository/org/apache/avro/avro/1.10.2/avro-1.10.2.jar
+7f37f0032000-7f37f0098000 r--s 009f0000 fd:00 1318259                    /home/cloudera/.m2/repository/org/apache/spark/spark-core_2.12/3.2.1/spark-core_2.12-3.2.1.jar
+7f37f0098000-7f37f01e8000 rw-p 00000000 00:00 0 
+7f37f01e8000-7f37f03c2000 r--s 03d6b000 fd:00 14456                      /usr/java/jdk1.8.0_181/jre/lib/rt.jar
+7f37f03c2000-7f37f08bb000 rw-p 00000000 00:00 0 
+7f37f08bb000-7f37f08bc000 ---p 00000000 00:00 0 
+7f37f08bc000-7f37f09bc000 rw-p 00000000 00:00 0 
+7f37f09bc000-7f37f09bd000 ---p 00000000 00:00 0 
+7f37f09bd000-7f37f0ae7000 rw-p 00000000 00:00 0 
+7f37f0ae7000-7f37f0d4e000 ---p 00000000 00:00 0 
+7f37f0d4e000-7f37f0d78000 rw-p 00000000 00:00 0 
+7f37f0d78000-7f37f0fde000 ---p 00000000 00:00 0 
+7f37f0fde000-7f37f1003000 rw-p 00000000 00:00 0 
+7f37f1003000-7f37f1127000 ---p 00000000 00:00 0 
+7f37f1127000-7f37f113b000 rw-p 00000000 00:00 0 
+7f37f113b000-7f37f14e8000 ---p 00000000 00:00 0 
+7f37f14e8000-7f37f1503000 r-xp 00000000 fd:00 14668                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libzip.so
+7f37f1503000-7f37f1703000 ---p 0001b000 fd:00 14668                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libzip.so
+7f37f1703000-7f37f1704000 rw-p 0001b000 fd:00 14668                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libzip.so
+7f37f1704000-7f37f1710000 r-xp 00000000 fd:00 2616352                    /lib64/libnss_files-2.12.so
+7f37f1710000-7f37f1910000 ---p 0000c000 fd:00 2616352                    /lib64/libnss_files-2.12.so
+7f37f1910000-7f37f1911000 r--p 0000c000 fd:00 2616352                    /lib64/libnss_files-2.12.so
+7f37f1911000-7f37f1912000 rw-p 0000d000 fd:00 2616352                    /lib64/libnss_files-2.12.so
+7f37f1912000-7f37f1915000 r--s 000fd000 fd:00 1452654                    /home/cloudera/.m2/repository/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8.jar
+7f37f1915000-7f37f1918000 r--s 0000d000 fd:00 1705243                    /home/cloudera/.m2/repository/org/apache/spark/spark-kvstore_2.12/3.2.1/spark-kvstore_2.12-3.2.1.jar
+7f37f1918000-7f37f191a000 r--s 00011000 fd:00 1452918                    /home/cloudera/.m2/repository/org/apache/spark/spark-launcher_2.12/3.2.1/spark-launcher_2.12-3.2.1.jar
+7f37f191a000-7f37f191e000 r--s 00044000 fd:00 1705234                    /home/cloudera/.m2/repository/org/apache/xbean/xbean-asm9-shaded/4.20/xbean-asm9-shaded-4.20.jar
+7f37f191e000-7f37f1920000 r--s 0000d000 fd:00 1452915                    /home/cloudera/.m2/repository/com/twitter/chill-java/0.10.0/chill-java-0.10.0.jar
+7f37f1920000-7f37f194b000 r-xp 00000000 fd:00 14662                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libjava.so
+7f37f194b000-7f37f1b4a000 ---p 0002b000 fd:00 14662                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libjava.so
+7f37f1b4a000-7f37f1b4c000 rw-p 0002a000 fd:00 14662                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libjava.so
+7f37f1b4c000-7f37f1b59000 r-xp 00000000 fd:00 14667                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libverify.so
+7f37f1b59000-7f37f1d59000 ---p 0000d000 fd:00 14667                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libverify.so
+7f37f1d59000-7f37f1d5b000 rw-p 0000d000 fd:00 14667                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libverify.so
+7f37f1d5b000-7f37f1d5e000 ---p 00000000 00:00 0 
+7f37f1d5e000-7f37f1e5c000 rw-p 00000000 00:00 0 
+7f37f1e5c000-7f37f2b38000 r-xp 00000000 fd:00 14644                      /usr/java/jdk1.8.0_181/jre/lib/amd64/server/libjvm.so
+7f37f2b38000-7f37f2d38000 ---p 00cdc000 fd:00 14644                      /usr/java/jdk1.8.0_181/jre/lib/amd64/server/libjvm.so
+7f37f2d38000-7f37f2e12000 rw-p 00cdc000 fd:00 14644                      /usr/java/jdk1.8.0_181/jre/lib/amd64/server/libjvm.so
+7f37f2e12000-7f37f2e60000 rw-p 00000000 00:00 0 
+7f37f2e60000-7f37f2e76000 r-xp 00000000 fd:00 3544330                    /usr/java/jdk1.8.0_181/lib/amd64/jli/libjli.so
+7f37f2e76000-7f37f3075000 ---p 00016000 fd:00 3544330                    /usr/java/jdk1.8.0_181/lib/amd64/jli/libjli.so
+7f37f3075000-7f37f3076000 rw-p 00015000 fd:00 3544330                    /usr/java/jdk1.8.0_181/lib/amd64/jli/libjli.so
+7f37f3076000-7f37f3077000 rw-p 00000000 00:00 0 
+7f37f3077000-7f37f307a000 r--s 0000b000 fd:00 1705231                    /home/cloudera/.m2/repository/org/objenesis/objenesis/2.5.1/objenesis-2.5.1.jar
+7f37f307a000-7f37f307b000 r--s 00001000 fd:00 1705228                    /home/cloudera/.m2/repository/com/esotericsoftware/minlog/1.3.0/minlog-1.3.0.jar
+7f37f307b000-7f37f3083000 rw-s 00000000 fd:00 1708524                    /tmp/hsperfdata_cloudera/14192
+7f37f3083000-7f37f3084000 rw-p 00000000 00:00 0 
+7f37f3084000-7f37f3085000 r--p 00000000 00:00 0 
+7f37f3085000-7f37f3086000 rw-p 00000000 00:00 0 
+7ffdde665000-7ffdde67e000 rw-p 00000000 00:00 0                          [stack]
+7ffdde70c000-7ffdde70d000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: SparkSQL.TestSQL
+java_class_path (initial): /home/cloudera/workspace/BDTFinalProject/SparkSQL/target/classes:/home/cloudera/.m2/repository/org/apache/spark/spark-core_2.12/3.2.1/spark-core_2.12-3.2.1.jar:/home/cloudera/.m2/repository/org/apache/avro/avro/1.10.2/avro-1.10.2.jar:/home/cloudera/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.2/jackson-core-2.12.2.jar:/home/cloudera/.m2/repository/org/apache/commons/commons-compress/1.20/commons-compress-1.20.jar:/home/cloudera/.m2/repository/org/apache/avro/avro-mapred/1.10.2/avro-mapred-1.10.2.jar:/home/cloudera/.m2/repository/org/apache/avro/avro-ipc/1.10.2/avro-ipc-1.10.2.jar:/home/cloudera/.m2/repository/org/tukaani/xz/1.8/xz-1.8.jar:/home/cloudera/.m2/repository/com/twitter/chill_2.12/0.10.0/chill_2.12-0.10.0.jar:/home/cloudera/.m2/repository/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2.jar:/home/cloudera/.m2/repository/com/esotericsoftware/minlog/1.3.0/minlog-1.3.0.jar:/home/cloudera/.m2/repository/org/objenesis/objenesis/2.5.1/objenesis-2.5.1.jar:/home/cloudera/.m2/repository/com/twitter/chill-java/0.10.0/chill-java-0.10.0.jar:/home/cloudera/.m2/repository/org/apache/xbean/xbean-asm9-shaded/4.20/xbean-asm9-shaded-4.20.jar:/home/cloudera/.m2/repository/org/apache/hadoop/hadoop-client-api/3.3.1/hadoop-client-api-3.3.1.jar:/home/cloudera/.m2/repository/org/apache/hadoop/hadoop-client-runtime/3.3.1/hadoop-client-runtime-3.3.1.jar:/home/cloudera/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/home/cloudera/.m2/repository/org/apache/spark/spark-launcher_2.12/3.2.1/spark-launcher_2.12-3.2.1.jar:/home/cloudera/.m2/repository/org/apache/spark/spark-kvstore_2.12/3.2.1/spark-kvstore_2.12-3.2.1.jar:/home/cloudera/.m2/repository/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8.jar:/home/cloudera/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/cloudera/.m2/repository/org/apache/spark/spark-networ
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/java/jdk1.8.0_181/
+JRE_HOME=/usr/java/jdk1.8.0_181/jre
+PATH=/usr/local/firefox:/sbin:/usr/java/jdk1.8.0_181/bin:/usr/local/apache-ant/apache-ant-1.9.2/bin:/usr/local/apache-maven/apache-maven-3.0.4/bin:/opt/maven/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/cloudera/bin:/usr/java/jdk1.8.0_181//bin
+USERNAME=cloudera
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xad2a40], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xad2a40], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x92a610], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x92a610], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x92a610], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x92a610], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x92be70], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x92d270], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x92d270], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x92d270], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x92d270], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:CentOS release 6.7 (Final)
+
+uname:Linux 2.6.32-573.el6.x86_64 #1 SMP Thu Jul 23 15:44:03 UTC 2015 x86_64
+libc:glibc 2.12 NPTL 2.12 
+rlimit: STACK 10240k, CORE 0k, NPROC 1024, NOFILE 4096, AS infinity
+load average:0.30 0.24 0.19
+
+/proc/meminfo:
+MemTotal:        8061388 kB
+MemFree:          444828 kB
+Buffers:            3808 kB
+Cached:           161704 kB
+SwapCached:        16080 kB
+Active:          6005064 kB
+Inactive:        1379236 kB
+Active(anon):    5967828 kB
+Inactive(anon):  1255284 kB
+Active(file):      37236 kB
+Inactive(file):   123952 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       8388604 kB
+SwapFree:        8096308 kB
+Dirty:               596 kB
+Writeback:             0 kB
+AnonPages:       7202868 kB
+Mapped:            62380 kB
+Shmem:              4148 kB
+Slab:              83408 kB
+SReclaimable:      40892 kB
+SUnreclaim:        42516 kB
+KernelStack:       27840 kB
+PageTables:        47972 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    12419296 kB
+Committed_AS:   15719040 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      159496 kB
+VmallocChunk:   34359575864 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   4651008 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       10240 kB
+DirectMap2M:     8378368 kB
+
+
+CPU:total 2 (initial active 2) (1 cores per cpu, 1 threads per core) family 6 model 140 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, 3dnowpref, tsc, tscinvbit
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 140
+model name	: 11th Gen Intel(R) Core(TM) i7-11390H @ 3.40GHz
+stepping	: 2
+microcode	: 4294967295
+cpu MHz		: 2918.399
+cache size	: 12288 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 27
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx rdtscp lm constant_tsc arch_perfmon tsc_reliable nonstop_tsc unfair_spinlock pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx hypervisor lahf_lm 3dnowprefetch arat
+bogomips	: 5836.79
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 140
+model name	: 11th Gen Intel(R) Core(TM) i7-11390H @ 3.40GHz
+stepping	: 2
+microcode	: 4294967295
+cpu MHz		: 2918.399
+cache size	: 12288 KB
+physical id	: 2
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 27
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx rdtscp lm constant_tsc arch_perfmon tsc_reliable nonstop_tsc unfair_spinlock pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx hypervisor lahf_lm 3dnowprefetch arat
+bogomips	: 5836.79
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 8061388k(444828k free), swap 8388604k(8096308k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.181-b13) for linux-amd64 JRE (1.8.0_181-b13), built on Jul  7 2018 00:56:38 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Fri May 13 19:15:11 2022
+elapsed time: 1 seconds (0d 0h 0m 1s)
+
