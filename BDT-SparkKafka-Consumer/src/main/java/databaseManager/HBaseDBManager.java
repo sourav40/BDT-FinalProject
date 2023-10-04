@@ -57,69 +57,44 @@ public class HBaseDBManager
 				admin.createTable(table);
 				Table tbl = connection.getTable(TableName.valueOf("tbl_keywords"));
 				Put put1 = new Put(Bytes.toBytes("1"));
-				put1.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Eurovision Song Contest"));
-				put1.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Eurovision"));
+				put1.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("SiliconValley"));
+				put1.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("SiliconValley"));
 				tbl.put(put1);
 				
 				Put put2 = new Put(Bytes.toBytes("2"));
-				put2.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("LittleMixLastShow"));
-				put2.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("LittleMixLastShow"));
+				put2.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Elon Musk"));
+				put2.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Elon Musk"));
 				tbl.put(put2);
 				
 				Put put3 = new Put(Bytes.toBytes("3"));
-				put3.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("BansOffOurBodies"));
-				put3.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("BansOffOurBodies"));
+				put3.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Telsa"));
+				put3.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Telsa"));
 				tbl.put(put3);
 				
 				Put put4 = new Put(Bytes.toBytes("4"));
-				put4.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Buffalo"));
-				put4.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Buffalo"));
+				put4.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Miami"));
+				put4.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Miami"));
 				tbl.put(put4);
 				
 				Put put5 = new Put(Bytes.toBytes("5"));
-				put5.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Covid19"));
-				put5.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("covid"));
+				put5.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Twitter"));
+				put5.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Twitter"));
 				tbl.put(put5);
 				
 				Put put6 = new Put(Bytes.toBytes("6"));
-				put6.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Crypto"));
-				put6.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Crypto"));
+				put6.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Chat GPT"));
+				put6.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Chat GTP"));
 				tbl.put(put6);
-				
-				Put put7 = new Put(Bytes.toBytes("7"));
-				put7.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Liverpool"));
-				put7.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Liverpool"));
-				tbl.put(put7);
-				
-				Put put8 = new Put(Bytes.toBytes("8"));
-				put8.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Zelensky"));
-				put8.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Zelensky"));
-				tbl.put(put8);
-				
-				Put put9 = new Put(Bytes.toBytes("9"));
-				put9.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("SiliconValley"));
-				put9.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("SiliconValley"));
-				tbl.put(put9);
-				
-				Put put10 = new Put(Bytes.toBytes("10"));
-				put10.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Elon Musk"));
-				put10.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Elon Musk"));
-				tbl.put(put10);
-				
-				Put put11 = new Put(Bytes.toBytes("11"));
-				put11.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Telsa"));
-				put11.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Telsa"));
-				tbl.put(put11);
-				
-				Put put12 = new Put(Bytes.toBytes("12"));
-				put12.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Miami"));
-				put12.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Miami"));
-				tbl.put(put12);
 
-				Put put13 = new Put(Bytes.toBytes("13"));
-				put13.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Twitter"));
-				put13.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Twitter"));
-				tbl.put(put13);
+				Put put7 = new Put(Bytes.toBytes("7"));
+				put7.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("Big Data"));
+				put7.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("Big Data"));
+				tbl.put(put7);
+
+				Put put8 = new Put(Bytes.toBytes("8"));
+				put8.addColumn(Bytes.toBytes("type_fam"),Bytes.toBytes("type"),Bytes.toBytes("NFL"));
+				put8.addColumn(Bytes.toBytes("keywords_fam"),Bytes.toBytes("keywords"),Bytes.toBytes("NFL"));
+				tbl.put(put8);
 				
 				tbl.close();
 			}
